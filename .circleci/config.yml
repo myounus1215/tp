@@ -4,21 +4,22 @@ orbs:
 workflows:
   deploy_infrastructure:
     jobs:
-      - terraform/fmt:
-          checkout: true
-          context: terraform
-      - terraform/validate:
-          checkout: true
-          context: terraform
-          requires:
-            - terraform/fmt
-      - terraform/plan:
-          checkout: true
-          context: terraform
-          persist-workspace: true
-          requires:
-            - terraform/validate
-    working_directory: ~/tf
+      steps:
+        - terraform/fmt:
+            checkout: true
+            context: terraform
+        - terraform/validate:
+            checkout: true
+            context: terraform
+            requires:
+              - terraform/fmt
+        - terraform/plan:
+            checkout: true
+            context: terraform
+            persist-workspace: true
+            requires:
+              - terraform/validate
+      working_directory: ~/tf
       # - terraform/apply:
       #     attach-workspace: true
       #     context: terraform
