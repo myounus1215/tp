@@ -13,15 +13,15 @@ variable "name" {
   type        = string
   default     = "wordpress"
 }
-variable "organization" {
-  description = "GitHub organization to use"
-  type        = string
-  default     = "myounus1215"
-}
-variable "circleci_cli_token" {
-  description = "circleci token to use"
-  type        = string
-}
+# variable "organization" {
+#   description = "GitHub organization to use"
+#   type        = string
+#   default     = "myounus1215"
+# }
+# variable "circleci_cli_token" {
+#   description = "circleci token to use"
+#   type        = string
+# }
 variable "tags" {
   description = "tags"
   type        = map(string)
