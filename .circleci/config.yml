@@ -19,7 +19,7 @@ jobs:
       #     path: .
       # - terraform/destroy:
       #     path: .
-    working_directory: ~/tf
+    working_directory: ~/tf/tf
 workflows:
   single-job-lifecycle:
     jobs:
