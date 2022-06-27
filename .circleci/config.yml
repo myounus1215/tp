@@ -6,6 +6,10 @@ jobs:
     executor: terraform/default
     steps:
       - checkout
+      - run:
+        name: terraform
+        command: |
+          echo '$(pwd)' && ls -la
       - terraform/init:
           path: .
       - terraform/validate:
