@@ -8,18 +8,18 @@ jobs:
       - checkout
       - run: echo $(pwd) && ls -la
       - terraform/init:
-          path: .
+          path: ./tf
       - terraform/validate:
-          path: .
+          path: ./tf
       - terraform/fmt:
-          path: .
+          path: ./tf
       - terraform/plan:
-          path: .
+          path: ./tf
       # - terraform/apply:
       #     path: .
       # - terraform/destroy:
       #     path: .
-    working_directory: ~/tf/tf
+    working_directory: ~
 workflows:
   single-job-lifecycle:
     jobs:
