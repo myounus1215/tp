@@ -15,8 +15,8 @@ jobs:
           path: ./tf
       - terraform/plan:
           path: ./tf
-      # - terraform/apply:
-      #     path: .
+      - terraform/apply:
+          path: ./tf
       # - terraform/destroy:
       #     path: .
     working_directory: ~
