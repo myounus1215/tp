@@ -8,16 +8,12 @@ jobs:
       - checkout
       - run: echo $(pwd) && ls -la
       - terraform/init:
-          context: terraform 
           path: ./tf
       - terraform/validate:
-          context: terraform 
           path: ./tf
       - terraform/fmt:
-          context: terraform 
           path: ./tf
       - terraform/plan:
-          context: terraform 
           path: ./tf
       # - terraform/apply:
       #     path: .
@@ -27,4 +23,6 @@ jobs:
 workflows:
   single-job-lifecycle:
     jobs:
-      - single-job-lifecycle
+      - single-job-lifecycle:
+          context:  
+            - terraform
