@@ -15,7 +15,13 @@ jobs:
           path: ./tf
       - terraform/plan:
           path: ./tf
+      - hold:
+          type: approval
+          requires:
+            - terraform/plan
       - terraform/apply:
+          requires:
+            - hold
           path: ./tf
       # - terraform/destroy:
       #     path: .
