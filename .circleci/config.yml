@@ -23,8 +23,8 @@ jobs:
           # requires:
           #   - hold
           path: ./tf
-      # - terraform/destroy:
-      #     path: .
+      - terraform/destroy:
+          path: ./tf
     working_directory: ~
 workflows:
   single-job-lifecycle:
